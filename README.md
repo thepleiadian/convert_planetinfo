@@ -1,0 +1,1 @@
+Just a small PHP file importing Oolite's solar system information into a database of your choosing.
