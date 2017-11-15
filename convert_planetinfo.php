@@ -92,14 +92,16 @@ for ($i=1; $i<=2048; $i++)
 // row to insert data into later
 $curgal = 0;
 $cursys = 0;
+$curid  = 1;
 echo "Inserting galaxy and system identifiers...<br>";
 for ($i=1; $i<=count($systemdata); $i++)
 {
-	$qry = "INSERT INTO oolite_maps (galaxy, system) VALUES(".$curgal.", ".$cursys.");";
+	$qry = 'INSERT INTO oolite_maps (id, galaxy, system) VALUES ('.$curid.', '.$curgal.', '.$cursys.');';
 	mysqli_query($OO_DB_LINK, $qry);
 	
 	// Increase numbers
 	$cursys++;
+	$curid++;
 	if ($cursys == 256) { $cursys = 0; $curgal++; }
 }
 
